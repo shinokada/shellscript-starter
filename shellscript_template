@@ -76,6 +76,17 @@ eval "set -- $REST"
 # check_cmd jq
 # check_cmd you_dont_have_it
 
+# color check
+blackprint "Testing black print."
+blueprint "Testing blue print."
+cyanprint "Testing cyan print."
+defaultprint "Testing default print."
+greenprint "Testing green print."
+magentaprint "Testing magenta print."
+redprint "Testing red print."
+whiteprint "Testing white print."
+yellowprint "Testing yellow print."
+
 # Add more commands.
 # Don't forget to add your command in lib/main_definition.sh
 if [ $# -gt 0 ]; then

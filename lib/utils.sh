@@ -22,26 +22,38 @@ DEFAULT="${ESC}[39m"
 
 ### Color Functions ##
 
-greenprint() {
-    printf "${GREEN}%s${RESET}\n" "$1"
+blackprint() {
+    printf "${BLACK}%s${RESET}\n" "$1"
 }
 
 blueprint() {
     printf "${BLUE}%s${RESET}\n" "$1"
 }
 
-redprint() {
-    printf "${RED}%s${RESET}\n" "$1"
+cyanprint() {
+    printf "${CYAN}%s${RESET}\n" "$1"
 }
 
-yellowprint() {
-    printf "${YELLOW}%s${RESET}\n" "$1"
+defaultprint() {
+    printf "${DEFAULT}%s${RESET}\n" "$1"
+}
+
+greenprint() {
+    printf "${GREEN}%s${RESET}\n" "$1"
 }
 
 magentaprint() {
     printf "${MAGENTA}%s${RESET}\n" "$1"
 }
 
-cyanprint() {
-    printf "${CYAN}%s${RESET}\n" "$1"
+redprint() {
+    printf "${RED}%s${RESET}\n" "$1"
+}
+
+whiteprint() {
+    printf "${WHITE}%s${RESET}\n" "$1"
+}
+
+yellowprint() {
+    printf "${YELLOW}%s${RESET}\n" "$1"
 }
