@@ -7,6 +7,15 @@ check_cmd() {
     fi
 }
 
+# bash version check
+check_bash() {
+    # If you are using Bash, check Bash version
+    if ((BASH_VERSINFO[0] < $1)); then
+        printf '%s\n' "Error: This requires Bash v${1} or higher. You have version $BASH_VERSION." 1>&2
+        exit 2
+    fi
+}
+
 ### Colors ##
 ESC=$(printf '\033')
 RESET="${ESC}[0m"
@@ -56,4 +65,41 @@ whiteprint() {
 
 yellowprint() {
     printf "${YELLOW}%s${RESET}\n" "$1"
+}
+
+# Text attribute
+BOLD="${ESC}[1m"
+FAINT="${ESC}[2m"
+ITALIC="${ESC}[3m"
+UNDERLINE="${ESC}[4m"
+SLOWBLINK="${ESC}[5m"
+SWAP="${ESC}[7m"
+STRIKE="${ESC}[9m"
+
+boldprint() {
+    printf "${BOLD}%s${RESET}\n" "$1"
+}
+
+faintprint() {
+    printf "${FAINT}%s${RESET}\n" "$1"
+}
+
+italicprint() {
+    printf "${ITALIC}%s${RESET}\n" "$1"
+}
+
+underlineprint() {
+    printf "${UNDERLINE}%s${RESET}\n" "$1"
+}
+
+slowblinkprint() {
+    printf "${SLOWBLINK}%s${RESET}\n" "$1"
+}
+
+swapprint() {
+    printf "${SWAP}%s${RESET}\n" "$1"
+}
+
+strikeprint() {
+    printf "${STRIKE}%s${RESET}\n" "$1"
 }

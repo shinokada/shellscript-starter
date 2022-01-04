@@ -1,5 +1,10 @@
 #!/bin/sh
 
+# Title:         Shellscript Template
+# Description:   Shellscript starter template
+# Author:        your-name <yourname@gmail.com>
+# Date:          2021-01-01
+
 set -eu
 VERSION="0.0.1"
 SCRIPT_NAME=$(basename "$0")
@@ -36,12 +41,14 @@ readlinkf() {
 
 self=$(readlinkf "$0")
 script_dir=${self%/*}
-# script_dir="/usr/share/teffects"
+# For Debian APT remove line 7 to 38 and use the following line to
+# define the script_dir
+# script_dir="/usr/share/shellscript_template"
 
 # Set variables
-VAR1="VAR1."
-VAR2="VAR2."
-VAR3="VAR3."
+VAR1="VAR1"
+VAR2="VAR2"
+VAR3="VAR3"
 
 # Import files
 # shellcheck disable=SC1091
@@ -51,7 +58,10 @@ VAR3="VAR3."
     . "${script_dir}/lib/utils.sh"
     . "${script_dir}/lib/cmd1_definition.sh"
     . "${script_dir}/lib/cmd2_definition.sh"
-    # more files
+    # import only one of helpers file
+    # . "${script_dir}/lib/shell_helpers.sh"
+    # or
+    # . "${script_dir}/lib/bash_helpers.sh"
 }
 
 # Keep it. You need this for main parser.
@@ -59,7 +69,8 @@ eval "$(getoptions parser_definition parse "$0") exit 1"
 parse "$@"
 eval "set -- $REST"
 
-# If you need to check OS uncomment it
+# CHECK ENVIRONMENT
+# If you need to check OS uncomment this
 # if [ "$(uname)" = "Linux" ]; then
 #     echo "Your OS is Linux."
 # elif [ "$(uname)" = "Darwin" ]; then
@@ -67,25 +78,11 @@ eval "set -- $REST"
 # fi
 
 # If you are using Bash, check Bash version
-# if ((BASH_VERSINFO[0] < 5)); then
-#     printf '%s\n' "Error: This requires Bash v5.0 or higher. You have version $BASH_VERSION." 1>&2
-#     exit 2
-# fi
+# check_bash 5
 
 # Check dependencies of your script
 # check_cmd jq
 # check_cmd you_dont_have_it
-
-# color check
-blackprint "Testing black print."
-blueprint "Testing blue print."
-cyanprint "Testing cyan print."
-defaultprint "Testing default print."
-greenprint "Testing green print."
-magentaprint "Testing magenta print."
-redprint "Testing red print."
-whiteprint "Testing white print."
-yellowprint "Testing yellow print."
 
 # Add more commands.
 # Don't forget to add your command in lib/main_definition.sh
@@ -108,6 +105,11 @@ if [ $# -gt 0 ]; then
         # shellcheck disable=SC1091
         . "${script_dir}/src/cmd2.sh"
         fn_cmd2 "$@"
+        ;;
+    text_example)
+        # shellcheck disable=SC1091
+        . "${script_dir}/src/text_example.sh"
+        fn_text
         ;;
     # more lines
     --) ;; # no subcommand, arguments only

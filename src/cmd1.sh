@@ -8,6 +8,9 @@ fn_cmd1() {
     echo "NUMBER: $NUMBER"
     echo "OPTION: $OPTION"
     echo "VERSION: $VERSION"
+
+    echo "My variable VAR1: $VAR1."
+
     i=0
     while [ $# -gt 0 ] && i=$((i + 1)); do
         echo "$i: $1"
