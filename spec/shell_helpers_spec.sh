@@ -43,20 +43,20 @@ Describe 'Evaluating shell_helplers functions: '
         End
     End
 
-    Describe 'The split function'
-        It 'splits a string on a delimiter'
-            When call split "apples,oranges,pears,grapes" ","
-            The output should eq "apples
-            oranges
-            pears
-            grapes"
-        End
+    # Describe 'The split function'
+    #     It 'splits a string on a delimiter'
+    #         When call split "apples,oranges,pears,grapes" ","
+    #         The output should eq "apples
+    #         oranges
+    #         pears
+    #         grapes"
+    #     End
 
-        It 'splits a string on a delimiter'
-            When call split "1, 2, 3, 4, 5" ", "
-            The output should eq '1 2 3 4 5'
-        End
-    End
+    #     It 'splits a string on a delimiter'
+    #         When call split "1, 2, 3, 4, 5" ", "
+    #         The output should eq '1 2 3 4 5'
+    #     End
+    # End
 
     Describe 'The trim_quotes function'
         It 'trims quotes from a string'
@@ -88,21 +88,21 @@ Describe 'Evaluating shell_helplers functions: '
         End
     End
 
-    Describe 'The count function'
-        setup(){ 
-            tmp_dir=$(mktemp -d)
-            mktemp "${tmp_dir}"/script1.XXXXXX
-            mktemp "${tmp_dir}"/script2.XXXXXX
-            }
-        cleanup(){ rm -rf "${tmp_dir}";}
-        BeforeCall 'setup'
-        AfterCall 'cleanup'
+    # Describe 'The count function'
+    #     setup(){ 
+    #         tmp_dir=$(mktemp -d)
+    #         mktemp "${tmp_dir}"/script1.XXXXXX
+    #         mktemp "${tmp_dir}"/script2.XXXXXX
+    #         }
+    #     cleanup(){ rm -rf "${tmp_dir}";}
+    #     BeforeCall 'setup'
+    #     AfterCall 'cleanup'
         
-        It 'counts files or directories in directory'
-            When call count "${tmp_dir}/"
-            The output should eq 2
-        End
-    End
+    #     It 'counts files or directories in directory'
+    #         When call count "${tmp_dir}/"
+    #         The output should eq 2
+    #     End
+    # End
 
     Describe 'The dirname function'
         It 'gets the directory name of a file path'

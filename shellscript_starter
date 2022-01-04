@@ -9,6 +9,12 @@ set -eu
 VERSION="0.0.1"
 SCRIPT_NAME=$(basename "$0")
 
+# Set variables
+VAR1="VAR1"
+VAR2="VAR2"
+VAR3="VAR3"
+
+# Keep readlinkf function
 readlinkf() {
     [ "${1:-}" ] || return 1
     max_symlinks=40
@@ -44,11 +50,6 @@ script_dir=${self%/*}
 # For Debian APT remove line 7 to 38 and use the following line to
 # define the script_dir
 # script_dir="/usr/share/shellscript_template"
-
-# Set variables
-VAR1="VAR1"
-VAR2="VAR2"
-VAR3="VAR3"
 
 # Import files
 # shellcheck disable=SC1091
