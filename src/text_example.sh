@@ -14,4 +14,8 @@ fn_text() {
     italicprint "$(redprint "Italic and red print.")"
     swapprint "$(blueprint "Swap and blue print.")"
     strikeprint "$(greenprint "Strike-through and green print.")"
+
+    bannerColor 'bannerColor example blue and *' "blue" "*"
+    bannerSimple 'bannerSimple' "*"
+    bannerColor 'bannerColor example green and =' 'green' '='
 }

@@ -30,7 +30,6 @@ parser_definition_cmd2() {
     disp :"getoptions parser_definition parse ''" --generate \
         -- 'Display parser code'
     disp :usage -h --help
-    disp VERSION --version
 }
 
 error() {

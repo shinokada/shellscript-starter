@@ -1,9 +1,9 @@
 #!/bin/sh
 
-# Title:         Shellscript Template
-# Description:   Shellscript starter template
+# Title:         Shellscript Starter
+# Description:   Shellscript starter for Bash/Zsh/Sh/Ksh
 # Author:        your-name <yourname@gmail.com>
-# Date:          2021-01-01
+# Date:          2022-01-10
 
 set -eu
 VERSION="0.0.1"
@@ -59,6 +59,7 @@ script_dir=${self%/*}
     . "${script_dir}/lib/utils.sh"
     . "${script_dir}/lib/cmd1_definition.sh"
     . "${script_dir}/lib/cmd2_definition.sh"
+    . "${script_dir}/lib/create_definition.sh"
     # import only one of helpers file
     # . "${script_dir}/lib/shell_helpers.sh"
     # or
@@ -111,6 +112,14 @@ if [ $# -gt 0 ]; then
         # shellcheck disable=SC1091
         . "${script_dir}/src/text_example.sh"
         fn_text
+        ;;
+    create)
+        eval "$(getoptions parser_definition_create parse "$0")"
+        parse "$@"
+        eval "set -- $REST"
+        # shellcheck disable=SC1091
+        . "${script_dir}/src/create.sh"
+        fn_create "$@"
         ;;
     # more lines
     --) ;; # no subcommand, arguments only

@@ -103,3 +103,59 @@ swapprint() {
 strikeprint() {
     printf "${STRIKE}%s${RESET}\n" "$1"
 }
+
+
+# lib/banners
+# Usage: bannerSimple "my title" "*"
+function bannerSimple() {
+    msg="${2} ${1} ${2}"
+    edge=$(echo "${msg}" | sed "s/./"${2}"/g")
+    echo "${edge}"
+    echo "$(tput bold)${msg}$(tput sgr0)"
+    echo "${edge}"
+    echo
+}
+
+# Usage: bannerColor "my title" "red" "*"
+function bannerColor() {
+    case ${2} in
+    black)
+        color=0
+        ;;
+    red)
+        color=1
+        ;;
+    green)
+        color=2
+        ;;
+    yellow)
+        color=3
+        ;;
+    blue)
+        color=4
+        ;;
+    magenta)
+        color=5
+        ;;
+    cyan)
+        color=6
+        ;;
+    white)
+        color=7
+        ;;
+    *)
+        echo "color is not set"
+        exit 1
+        ;;
+    esac
+
+    msg="${3} ${1} ${3}"
+    edge=$(echo "${msg}" | sed "s/./${3}/g")
+    tput setaf ${color}
+    tput bold
+    echo "${edge}"
+    echo "${msg}"
+    echo "${edge}"
+    tput sgr 0
+    echo
+}

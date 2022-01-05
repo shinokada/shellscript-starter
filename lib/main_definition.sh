@@ -11,6 +11,7 @@ parser_definition() {
     cmd cmd1 -- "CMD1 description."
     cmd cmd2 -- "CMD2 description."
     cmd text_example -- "Print different type of texts."
+    cmd create -- "Create this and that."
 
     msg -- '' "Examples:
     

@@ -13,5 +13,4 @@ parser_definition_cmd1() {
     param NUMBER -n --number validate:number -- "accepts only a number value"
     option OPTION -o --option on:"default" -- "accepts -ovalue / --option=value"
     disp :usage -h --help
-    disp VERSION --version
 }
