@@ -12,7 +12,8 @@ parser_definition_cmd2() {
     flag FLAG_C -c +c --{no-}flag-c on:1 no:0 init:@unset
     flag VERBOSE -v +v --{no-}verbose counter:true init:=0
     param PARAM -p --param init:="default"
-    param LANG --lang init:@none # or init:="$LANG" for using current value
+    param LANG --lang 
+    # or init:="$LANG" for using current value
     param NUMBER --number validate:number
     param RANGE --range validate:'range 10 100' \
         -- '10 - 100'
