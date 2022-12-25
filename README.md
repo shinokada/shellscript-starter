@@ -1,7 +1,7 @@
 <h1 align="center">Shellscript Starter</h1>
 
 <p align="center">
-<a href="https://shinokada.github.io/shellscript-starter/">Shellscript Starter</a>
+<a href="https://shellscript-starter.codewithshin.com/">Shellscript Starter</a>
 </p>
 
 <p align="center">
