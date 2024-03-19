@@ -1,3 +1,7 @@
+<p align="center">
+<img width="500" src="https://raw.githubusercontent.com/shinokada/teffects/main/images/teffects.png" />
+</p>
+
 <h1 align="center">Shellscript Starter</h1>
 
 <p align="center">
