@@ -47,9 +47,8 @@ readlinkf() {
 
 self=$(readlinkf "$0")
 script_dir=${self%/*}
-# For Debian APT remove line 7 to 38 and use the following line to
-# define the script_dir
-# script_dir="/usr/share/shellscript_template"
+# When you create a package for Debian/Ubuntu remove the above readlinkf function and self, script_dir variables and use the following line to define the script_dir. When a user installs this Debian package, the script_dir variable will be set to "/usr/share/yourscript-name"
+# script_dir="/usr/share/yourscript-name"
 
 # Import files
 # shellcheck disable=SC1091
